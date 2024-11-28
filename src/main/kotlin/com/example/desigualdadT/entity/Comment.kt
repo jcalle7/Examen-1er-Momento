@@ -1,23 +1,21 @@
 package com.example.desigualdadT.entity
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import jakarta.persistence.*
 
 @Entity
-@Table(name = "students_registered_view")
-class StudentsRegisteredView {
+@Table(name = "comments")
+class Comment {
     @Id
-    @Column(updatable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
 
-    @Column(name= "full_name")
-    var fullName: String? = null
+    @Column(name = "course_name", nullable = false)
+    var courseName: String? = null
 
-    var email: String? = null
+    @Column(nullable = false)
+    var description: String? = null
 
-    var phone: String? = null
-
-    var address: String? = null
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id", nullable = false)
+    var student: Student? = null
 }

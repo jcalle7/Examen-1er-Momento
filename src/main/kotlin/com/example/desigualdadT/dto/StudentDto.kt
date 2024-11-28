@@ -12,4 +12,10 @@ class StudentDto {
     @NotBlank(message = "Email is required")
     @NotNull(message = "Email is required")
     var email: String? = null
+
+    var phone: String? = null
+
+    var address: String? = null
+
+    var id: Long? = null
 }

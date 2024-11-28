@@ -13,4 +13,4 @@ CREATE TABLE IF NOT EXISTS comments(
     course_name VARCHAR(255),
     description VARCHAR(255),
     FOREIGN KEY (student_id) REFERENCES student(id)
-); 
+);
